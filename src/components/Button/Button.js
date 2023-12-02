@@ -13,19 +13,12 @@
 //     </div>
 //   );
 // }
-// Destructuring
+// Destructuring...
 
 import "./button.css";
 
 export default function Button({ children, variant }) {
-  //   const getColor = () => {
-  //     if (variant === "info") {
-  //       return "blue";
-  //     } else if (variant === "warning") {
-  //       return "yellow";
-  //     } else if (variant === "danger") {
-  //       return "red";
-  //     }
-  //   };
-  return <div className="button">{children}</div>;
+  const style = ["button", variant];
+
+  return <div className={style.join(" ")}>{children}</div>;
 }
