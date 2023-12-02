@@ -5,24 +5,33 @@ import React, { Component } from "react";
 // }
 
 class Test extends Component {
-  foo() {
-    console.log("foo");
+  foo(name, e) {
+    console.log("foo", name, e);
   }
-
   render() {
-    // console.log(this.props.x);
-    // return <div>TEST 2</div>;
-    return (
-      <button
-        // onClick={() => {
-        //   console.log("clicked");
-        // }}
-        onClick={this.foo}
-      >
-        CLICK
-      </button>
-    );
+    return <button onClick={(event) => this.foo("test", event)}>CLICK</button>;
   }
 }
 
 export default Test;
+//   foo() {
+//     console.log("foo");
+//   }
+
+//   render() {
+//     // console.log(this.props.x);
+//     // return <div>TEST 2</div>;
+//     return (
+//       <button
+//         // onClick={() => {
+//         //   console.log("clicked");
+//         // }}
+//         onClick={this.foo}
+//       >
+//         CLICK
+//       </button>
+//     );
+//   }
+// }
+
+// export default Test;
