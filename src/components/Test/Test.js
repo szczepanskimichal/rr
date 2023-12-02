@@ -81,7 +81,8 @@ import React, { Component } from "react";
 
 function Child({ user, foo }) {
   const handleClick = () => {
-    foo("Message from child to parent", user);
+    // foo("Message from child to parent" + user);
+    foo(user);
   };
   return (
     <div>
@@ -99,8 +100,11 @@ class Parent extends Component {
     };
   }
 
-  send = (msg) => {
-    console.log(msg);
+  send = (userToRemove) => {
+    // console.log(msg);
+    this.setState((prevState) => ({
+      list: prevState.list.filter((user) => user !== userToRemove),
+    }));
   };
 
   render() {
