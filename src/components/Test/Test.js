@@ -5,18 +5,22 @@ import React, { Component } from "react";
 // }
 
 class Test extends Component {
-  constructor(props) {
-    super(props);
-    console.log(this);
-    this.foo = this.foo.bind(this);
-  }
+  //   constructor(props) {
+  //     super(props);
+  //     console.log(this);
+  //     this.foo = this.foo.bind(this);
+  //   }
 
-  foo(name) {
+  xyz = () => {
     console.log("Hi, my name is: ", this.props.x);
-  }
+  };
+
+  //   foo(name) {
+  //     console.log("Hi, my name is: ", this.props.x);
+  //   }
   render() {
     console.log(this);
-    return <button onClick={this.foo}>CLICK</button>;
+    return <button onClick={this.xyz}>CLICK</button>;
   }
 }
 
