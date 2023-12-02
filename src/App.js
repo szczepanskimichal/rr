@@ -1,23 +1,38 @@
 import React from "react";
-import Button from "./components/Button/Button";
-// import { func } from "prop-types";
-import Alert from "./components/Alert/Alert";
+import Test from "./components/Test/Test";
 
 function App() {
   return (
     <div>
-      <Alert />
-      <Button variant="info">Info</Button>
-      <Button variant="warning" outline>
-        Warning
-      </Button>
-      <Button variant="danger">Danger</Button>
+      <Test x={9} />
     </div>
   );
 }
+export default App;
+
+//------------------------------------------------------
+// import React from "react";
+// import Button from "./components/Button/Button";
+// // import { func } from "prop-types";
+// import Alert from "./components/Alert/Alert";
+// import Button2 from "./components/Alert/Button";
+
+// function App() {
+//   return (
+//     <div>
+//       <Alert />
+//       <Button variant="info">Info</Button>
+//       <Button variant="warning" outline>
+//         Warning
+//       </Button>
+//       <Button2 />
+//       <Button variant="danger">Danger</Button>
+//     </div>
+//   );
+// }
 
 //------------------------------------------------------------
-// function Book({ tittle }) {
+// function Book({ tittle }) {s
 //   return <p>{tittle}</p>;
 // }
 
@@ -83,4 +98,4 @@ function App() {
 //   return <Header />;
 // }
 
-export default App;
+// export default App;

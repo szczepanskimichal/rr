@@ -1,5 +1,5 @@
 .button {
-  color: red;
+  color: black;
   margin: 10px;
   font-size: 20px;
 }
@@ -8,20 +8,15 @@
   composes: button;
   background-color: lightblue;
 }
-.button.warning {
+.warning {
   composes: button;
   background-color: orange;
 }
-.button.danger {
+.danger {
   composes: button;
   background-color: red;
 }
-
-.button.outline {
+.outline {
   composes: button;
   outline: 5px solid black;
 }
-
-/* .test {
-  background-color: salmon;
-} */
