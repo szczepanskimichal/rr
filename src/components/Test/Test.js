@@ -46,6 +46,12 @@ class Test extends Component {
         counter: prevState.counter + 1,
       };
     });
+
+    this.setState((prev) => {
+      return {
+        tab: [...prev.tab, 4],
+      };
+    });
   };
   render() {
     console.log("render");
