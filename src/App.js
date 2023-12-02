@@ -1,14 +1,24 @@
 import React from "react";
-import Test from "./components/Test/Test";
+import Form from "./components/Form/Form";
 
 function App() {
-  return (
-    <div>
-      <Test x={9} />
-    </div>
-  );
+  return <Form />;
 }
+
 export default App;
+
+//------------------------------------------------------
+// import React from "react";
+// import Test from "./components/Test/Test";
+
+// function App() {
+//   return (
+//     <div>
+//       <Test x={9} />
+//     </div>
+//   );
+// }
+// export default App;
 
 //------------------------------------------------------
 // import React from "react";
