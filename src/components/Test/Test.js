@@ -39,19 +39,30 @@ class Test extends Component {
     // this.setState({ counter: 999 });
     // console.log(this);
     // const { counter, name } = this.state;
+    // console.log("increment", this.state.counter);
+
+    // this.setState((prevState, props) => {
+    //   return {
+    //     counter: prevState.counter + 1,
+    //     name: "Ada",
+    //   };
+    // });
+
+    // this.setState((prev) => {
+    //   return {
+    //     tab: [...prev.tab, 4],
+    //   };
+    // });
     console.log("increment", this.state.counter);
 
-    this.setState((prevState) => {
-      return {
-        counter: prevState.counter + 1,
-      };
-    });
-
-    this.setState((prev) => {
-      return {
-        tab: [...prev.tab, 4],
-      };
-    });
+    this.setState(
+      {
+        name: "Ada",
+      },
+      () => {
+        console.log("after state update", this.state.name);
+      }
+    );
   };
   render() {
     console.log("render");
