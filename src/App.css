@@ -1,0 +1,12 @@
+@import-normalize;
+.appContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Wysokość całego ekranu (viewport) */
+}
+
+/* Dodaj odpowiednie reguły dla responsywności w zależności od potrzeb */
+@media (max-width: 768px) {
+  /* Przykładowe reguły dla urządzeń o szerokości do 768px */
+}
