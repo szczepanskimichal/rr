@@ -31,6 +31,7 @@ class Test extends Component {
     this.state = {
       counter: 1,
       name: "Mija",
+      tab: [1, 2, 3],
     };
   }
   increment = () => {
@@ -48,12 +49,15 @@ class Test extends Component {
   };
   render() {
     console.log("render");
-    const { counter, name } = this.state;
+    const { counter, name, tab } = this.state;
     return (
-      <button onClick={this.increment}>
-        CLICK - {counter}
-        <p>{name}</p>
-      </button>
+      <>
+        <button onClick={this.increment}>
+          CLICK - {counter}
+          <p>{name}</p>
+        </button>
+        <h1>{tab}</h1>
+      </>
     );
   }
 }
