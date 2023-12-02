@@ -5,7 +5,9 @@ import Button from "./components/Button/Button";
 function App() {
   return (
     <div>
-      <Button />
+      <Button variant="info">Info</Button>
+      <Button variant="warning">Warning</Button>
+      <Button variant="danger">Danger</Button>
     </div>
   );
 }
