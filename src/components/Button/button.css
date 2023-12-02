@@ -14,3 +14,11 @@
 .button.danger {
   background-color: red;
 }
+
+.button.outline {
+  outline: 5px solid black;
+}
+
+.test {
+  background-color: salmon;
+}
