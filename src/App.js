@@ -1,10 +1,12 @@
 import React from "react";
 import Button from "./components/Button/Button";
 // import { func } from "prop-types";
+import Alert from "./components/Alert/Alert";
 
 function App() {
   return (
     <div>
+      <Alert />
       <Button variant="info">Info</Button>
       <Button variant="warning" outline>
         Warning

@@ -1,21 +1,24 @@
 .button {
-  color: black;
+  color: red;
   margin: 10px;
   font-size: 20px;
-  border: 3px solid green;
 }
 
-.button.info {
+.info {
+  composes: button;
   background-color: lightblue;
 }
 .button.warning {
+  composes: button;
   background-color: orange;
 }
 .button.danger {
+  composes: button;
   background-color: red;
 }
 
 .button.outline {
+  composes: button;
   outline: 5px solid black;
 }
 

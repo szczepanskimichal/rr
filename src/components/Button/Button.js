@@ -37,5 +37,5 @@ export default function Button({ children, variant, outline }) {
   //       {children}
   //     </div>
   //   );
-  return <div className={css.button}>{children}</div>;
+  return <div className={css[variant]}>{children}</div>;
 }
