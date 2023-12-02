@@ -29,7 +29,7 @@ class Test extends Component {
     super(props);
 
     this.state = {
-      counter: 1,
+      counter: this.props.x,
       name: "Mija",
       tab: [1, 2, 3],
     };
@@ -41,12 +41,10 @@ class Test extends Component {
     // const { counter, name } = this.state;
     // console.log("increment", this.state.counter);
 
-    // this.setState((prevState, props) => {
-    //   return {
-    //     counter: prevState.counter + 1,
-    //     name: "Ada",
-    //   };
-    // });
+    this.setState((prevState, props) => ({
+      counter: prevState.counter + 1,
+      name: "Ada",
+    }));
 
     // this.setState((prev) => {
     //   return {
