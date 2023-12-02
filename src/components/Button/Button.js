@@ -13,8 +13,8 @@
 //     </div>
 //   );
 // }
-
 // Destructuring
+
 const style = {
   color: "red",
   backgroundColor: "blue",
