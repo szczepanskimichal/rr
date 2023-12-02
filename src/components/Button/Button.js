@@ -15,16 +15,16 @@
 // }
 // Destructuring...
 
-import "./button.css";
+import css from "./button.module.css";
 import clsx from "clsx";
 
 export default function Button({ children, variant, outline }) {
-  const style = ["button", variant];
-  console.log(clsx("foo", true && "xyz"));
+  //   const style = ["button", variant];
+  //   console.log(clsx("foo", false && "xyz"));
 
-  if (outline) {
-    style.push("outline");
-  }
+  //   if (outline) {
+  //     style.push("outline");
+  //   }
 
   //   return (
   //     <div className={style.join(" ")}>
@@ -32,5 +32,10 @@ export default function Button({ children, variant, outline }) {
   //       <p className="test">TEST</p>
   //     </div>
   //   );
-  return <div className={style.join(" ")}>{children}</div>;
+  //   return (
+  //     <div className={clsx("button", variant, outline && "outline")}>
+  //       {children}
+  //     </div>
+  //   );
+  return <div className={css.button}>{children}</div>;
 }
