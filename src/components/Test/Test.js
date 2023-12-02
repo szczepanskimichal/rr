@@ -33,13 +33,21 @@ class Test extends Component {
       name: "Mija",
     };
   }
-  increment() {
-    console.log("increment", this.state.counter);
-    this.setState({ counter: 999 });
-  }
-
-  render() {
+  increment = () => {
+    // console.log("increment", this.state.counter);
+    // this.setState({ counter: 999 });
     // console.log(this);
+    // const { counter, name } = this.state;
+    console.log("increment", this.state.counter);
+
+    this.setState((prevState) => {
+      return {
+        counter: prevState.counter + 1,
+      };
+    });
+  };
+  render() {
+    console.log("render");
     const { counter, name } = this.state;
     return (
       <button onClick={this.increment}>
