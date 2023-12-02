@@ -1,26 +1,36 @@
 import React from "react";
-import Header from "./components/Header";
-
-function Book({ tittle }) {
-  return <p>{tittle}</p>;
-}
+import Button from "./components/Button/Button";
+// import { func } from "prop-types";
 
 function App() {
-  const favouriteBooks = [
-    { id: "id-1", name: "JS for beginners" },
-    { id: "id-2", name: "React basics" },
-    { id: "id-3", name: "React Router overview" },
-    { id: "id-4", name: "Redux in depth" },
-  ];
   return (
     <div>
-      {favouriteBooks.map((book) => (
-        // <p>{book.name}</p>
-        <Book tittle={book.name} id={book.id} key={book.id} />
-      ))}
+      <Button />
     </div>
   );
 }
+
+//------------------------------------------------------------
+// function Book({ tittle }) {
+//   return <p>{tittle}</p>;
+// }
+
+// function App() {
+//   const favouriteBooks = [
+//     { id: "id-1", name: "JS for beginners" },
+//     { id: "id-2", name: "React basics" },
+//     { id: "id-3", name: "React Router overview" },
+//     { id: "id-4", name: "Redux in depth" },
+//   ];
+//   return (
+//     <div>
+//       {favouriteBooks.map((book) => (
+//         // <p>{book.name}</p>
+//         <Book tittle={book.name} id={book.id} key={book.id} />
+//       ))}
+//     </div>
+//   );
+// }
 
 //------------------------------------------------------------
 // && operator

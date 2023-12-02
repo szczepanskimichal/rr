@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
