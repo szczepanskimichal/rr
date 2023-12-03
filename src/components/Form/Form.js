@@ -4,7 +4,13 @@ const initValues = {
   username: "Welcome",
   password: "",
   isChecked: false,
-  color: null,
+  color: "white",
+  country: "",
+};
+
+const COLORS = {
+  WHITE: "white",
+  BLACK: "black",
 };
 
 class Form extends Component {
@@ -51,7 +57,8 @@ class Form extends Component {
 
   render() {
     console.log(this);
-    const { username, password, isChecked } = this.state;
+    const { username, password, isChecked, color, country } = this.state;
+    const { WHITE, BLACK } = COLORS;
     return (
       <>
         <h1>{username}</h1>
@@ -74,14 +81,35 @@ class Form extends Component {
             checked={isChecked}
             onChange={this.handleChange}
           />
+          <br />
           <label>
             BLACK
-            <input type="radio" />
+            <input
+              onChange={this.handleChange}
+              type="radio"
+              value={BLACK}
+              checked={color === BLACK}
+              name="color"
+            />
           </label>
           <label>
             WHITE
-            <input type="radio" />
+            <input
+              onChange={this.handleChange}
+              type="radio"
+              value={WHITE}
+              checked={color === WHITE}
+              name="color"
+            />
           </label>
+          <br />
+          <select name="country" value={country} onChange={this.handleChange}>
+            <option value="">Select country</option>
+            <option value="PL">POLAND</option>
+            <option value="DE">GERMANY</option>
+            <option value="FR">FRANCE</option>
+            <option value="US">USA</option>
+          </select>
           <button type="submit">Submit</button>
         </form>
       </>
