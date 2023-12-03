@@ -110,6 +110,8 @@ class Form extends Component {
             <option value="FR">FRANCE</option>
             <option value="US">USA</option>
           </select>
+          <label htmlFor="xyz">CLICK HERE</label>
+          <input id="xyz" type="text" />
           <button type="submit">Submit</button>
         </form>
       </>
