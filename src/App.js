@@ -1,11 +1,27 @@
 import React from "react";
-import Form from "./components/Form/Form";
+import Livecycle from "./components/LifeCycle/Lifecycle"; // Upewnij się, że ścieżka do pliku Livecycle.js jest poprawna
 
-function App() {
-  return <Form />;
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Livecycle />
+      </div>
+    );
+  }
 }
 
 export default App;
+
+//------------------------------------------------------
+// import React from "react";
+// import Form from "./components/Form/Form";
+
+// function App() {
+//   return <Form />;
+// }
+
+// export default App;
 
 //------------------------------------------------------
 // import React from "react";
