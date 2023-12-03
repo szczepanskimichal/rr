@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import Counter1 from "../Counter/Counter1";
+import Counter2 from "../Counter/Counter2";
 // class Child extends Component {
 //   state = {
 //     name: "Mija",
@@ -32,18 +33,24 @@ class Livecycle extends Component {
     super(props);
     console.log("constructor");
     this.state = {
-      counter: 0,
+      counter1: 0,
+      counter2: 0,
     };
   }
 
-  increment = () => {
-    this.setState((prev) => ({ counter: prev.counter + 1 }));
-    console.log(this.state.counter);
+  increment1 = () => {
+    this.setState((prev) => ({ counter1: prev.counter1 + 1 }));
+    console.log(this.state.counter1);
   };
 
-  decrement = () => {
-    this.setState((prev) => ({ counter: prev.counter - 1 }));
+  increment2 = () => {
+    this.setState((prev) => ({ counter2: prev.counter2 + 1 }));
+    console.log(this.state.counter2);
   };
+
+  //   decrement = () => {
+  //     this.setState((prev) => ({ counter: prev.counter - 1 }));
+  //   };
 
   componentDidMount() {
     console.log("componentDidMount");
@@ -65,13 +72,17 @@ class Livecycle extends Component {
 
   render() {
     console.log("render");
-    const { counter } = this.state;
+    const { counter1, counter2 } = this.state;
     return (
       <>
-        <h1>{counter}</h1>
+        {/* <h1>{counter}</h1>
         <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>-</button>
+        <button onClick={this.decrement}>-</button> */}
         {/* <Child name="Ada" /> */}
+        <Counter1 value={counter1} handleCLick={this.increment1} />
+        <Counter2 value={counter2} handleCLick={this.increment2} />
+        {/* <Counter1 />
+        <Counter2 /> */}
       </>
     );
   }
