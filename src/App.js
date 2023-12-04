@@ -1,17 +1,16 @@
 import React from "react";
-import Livecycle from "./components/LifeCycle/Lifecycle"; // Upewnij się, że ścieżka do pliku Livecycle.js jest poprawna
+import Test from "./components/Test/Test.js";
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Test.js />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <Test />
+    </div>
+  );
 }
 
 export default App;
+
 // import React from "react";
 // import Livecycle from "./components/LifeCycle/Lifecycle"; // Upewnij się, że ścieżka do pliku Livecycle.js jest poprawna
 
