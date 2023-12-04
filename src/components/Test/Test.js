@@ -149,38 +149,123 @@
 // }
 // //-------------------------------------------------
 
+// import { Button } from "@mui/material";
+// import { useState, useEffect } from "react";
+
+// function Child() {
+//   useEffect(() => {
+//     console.log("On child mount");
+
+//     return (
+//       () => {
+//         console.log("Child will unmount");
+//       },
+//       []
+//     );
+//   });
+//   return <div>Child</div>;
+// }
+
+// export default function Test() {
+//   const [counter, setCounter] = useState(0);
+//   const [counter2, setCounter2] = useState(0);
+//   const [toggle, setToggle] = useState(false);
+//   const handleCLick = () => {
+//     setCounter((prevState) => prevState + 1);
+//   };
+//   const handleCLick2 = () => {
+//     setCounter2((prevState) => prevState + 1);
+//   };
+
+//   // useEffect(() => {
+//   //   console.log("On mount, and every time satet changes");
+//   // }); // NEVER DO THIS WAY!!!
+
+//   useEffect(() => {
+//     console.log("On mount");
+
+//     return () => {
+//       console.log("Will unmount");
+//     };
+//   }, []);
+
+//   useEffect(() => {
+//     console.log("On mount and every counter state change");
+
+//     return () => {
+//       console.log("BEFORE UPDATE:", counter);
+//     };
+//   }, [counter]);
+
+//   useEffect(() => {
+//     console.log("On mount, counter and every counter state change");
+//   }, [counter, counter2]);
+
+//   return (
+//     <div>
+//       <Button variant="contained" color="secondary" onClick={handleCLick}>
+//         Click Me! {counter}
+//       </Button>
+//       <Button variant="contained" color="primary" onClick={handleCLick2}>
+//         Click Me2! {counter2}
+//       </Button>
+//       <Button
+//         variant="contained"
+//         color="primary"
+//         onClick={() => setToggle((p) => !p)}
+//       >
+//         TOGGLE {counter2}
+//       </Button>
+//       {toggle && <Child />}
+//     </div>
+//   );
+// }
+// //-------------------------------------------------
+
 import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
+
+function Child() {
+  useEffect(() => {
+    console.log("Child mounted");
+
+    return () => {
+      console.log("Child will unmount");
+    };
+  }, []);
+
+  return <div>Child</div>;
+}
+
 export default function Test() {
   const [counter, setCounter] = useState(0);
   const [counter2, setCounter2] = useState(0);
+  const [toggle, setToggle] = useState(false);
+
   const handleCLick = () => {
     setCounter((prevState) => prevState + 1);
   };
+
   const handleCLick2 = () => {
     setCounter2((prevState) => prevState + 1);
   };
-
-  useEffect(() => {
-    console.log("On mount, and every time satet changes");
-  });
-
-  useEffect(() => {
-    console.log("On mount");
-  }, []);
-
-  useEffect(() => {
-    console.log("On mount and every counter state change");
-  }, [counter]);
 
   return (
     <div>
       <Button variant="contained" color="secondary" onClick={handleCLick}>
         Click Me! {counter}
       </Button>
-      <Button variant="contained" color="primary" onClick={handleCLick}>
-        Click Me! {counter}
+      <Button variant="contained" color="primary" onClick={handleCLick2}>
+        Click Me2! {counter2}
       </Button>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => setToggle((prev) => !prev)}
+      >
+        TOGGLE {counter2}
+      </Button>
+      {toggle && <Child />}
     </div>
   );
 }
