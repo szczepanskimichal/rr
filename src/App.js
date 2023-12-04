@@ -5,13 +5,27 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Livecycle />
+        <Test.js />
       </div>
     );
   }
 }
 
 export default App;
+// import React from "react";
+// import Livecycle from "./components/LifeCycle/Lifecycle"; // Upewnij się, że ścieżka do pliku Livecycle.js jest poprawna
+
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <Livecycle />
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
 
 //------------------------------------------------------
 // import React from "react";
