@@ -272,20 +272,10 @@
 // //-------------------------------------------------
 import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
-
-function getRandomColor() {
-  var letters = "0123456789ABCDEF";
-  var color = "#";
-  for (var i = 0; i < 6; i++) color += letters[Math.floor(Math.random() * 16)];
-  return color;
-}
+import { useRandomColors } from "../hooks/useRandomColors";
 
 export default function Test() {
-  const [color, setColor] = useState("#000");
-
-  const changeColor = () => {
-    setColor(getRandomColor());
-  };
+  const { color, changeColor } = useRandomColors();
 
   useEffect(() => {
     console.log("On mount");
