@@ -1,5 +1,5 @@
 import React from "react";
-import Test from "./components/Characters/Characters";
+import Characters from "./components/Characters/Characters";
 
 function App() {
   return (
