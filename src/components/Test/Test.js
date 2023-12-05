@@ -222,50 +222,87 @@
 // }
 // //-------------------------------------------------
 
+// import { Button } from "@mui/material";
+// import { useState, useEffect } from "react";
+
+// function Child() {
+//   useEffect(() => {
+//     console.log("Child mounted");
+
+//     return () => {
+//       console.log("Child will unmount");
+//     };
+//   }, []);
+
+//   return <div>Child</div>;
+// }
+
+// export default function Test() {
+//   const [counter, setCounter] = useState(0);
+//   const [counter2, setCounter2] = useState(0);
+//   const [toggle, setToggle] = useState(false);
+
+//   const handleCLick = () => {
+//     setCounter((prevState) => prevState + 1);
+//   };
+
+//   const handleCLick2 = () => {
+//     setCounter2((prevState) => prevState + 1);
+//   };
+
+//   return (
+//     <div>
+//       <Button variant="contained" color="secondary" onClick={handleCLick}>
+//         Click Me! {counter}
+//       </Button>
+//       <Button variant="contained" color="primary" onClick={handleCLick2}>
+//         Click Me2! {counter2}
+//       </Button>
+//       <Button
+//         variant="contained"
+//         color="primary"
+//         onClick={() => setToggle((prev) => !prev)}
+//       >
+//         TOGGLE {counter2}
+//       </Button>
+//       {toggle && <Child />}
+//     </div>
+//   );
+// }
+// //-------------------------------------------------
 import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
 
-function Child() {
-  useEffect(() => {
-    console.log("Child mounted");
-
-    return () => {
-      console.log("Child will unmount");
-    };
-  }, []);
-
-  return <div>Child</div>;
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) color += letters[Math.floor(Math.random() * 16)];
+  return color;
 }
 
 export default function Test() {
-  const [counter, setCounter] = useState(0);
-  const [counter2, setCounter2] = useState(0);
-  const [toggle, setToggle] = useState(false);
+  const [color, setColor] = useState("#000");
 
-  const handleCLick = () => {
-    setCounter((prevState) => prevState + 1);
+  const changeColor = () => {
+    setColor(getRandomColor());
   };
 
-  const handleCLick2 = () => {
-    setCounter2((prevState) => prevState + 1);
-  };
+  useEffect(() => {
+    console.log("On mount");
+  }, []);
 
   return (
     <div>
-      <Button variant="contained" color="secondary" onClick={handleCLick}>
-        Click Me! {counter}
+      <div
+        style={{
+          background: color,
+          height: 100,
+          width: 100,
+        }}
+      />
+      <Button variant="contained" color="primary" onClick={changeColor}>
+        Click Me!
       </Button>
-      <Button variant="contained" color="primary" onClick={handleCLick2}>
-        Click Me2! {counter2}
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => setToggle((prev) => !prev)}
-      >
-        TOGGLE {counter2}
-      </Button>
-      {toggle && <Child />}
     </div>
   );
 }
